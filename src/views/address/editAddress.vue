@@ -1,0 +1,44 @@
+<template>
+    <div class="editAddress">
+        <van-nav-bar
+        title="修改地址"
+        left-text="返回"
+        left-arrow
+        @click-left="onClickLeft"
+        />
+
+        <van-address-edit
+        Address-info="AddressInfo"
+        show-set-default
+        show-search-result
+        :search-result="searchResult"
+        @save="onSave"
+        @change-detail="onChangeDetail"
+        />
+    </div>
+</template>
+<script>
+export default {
+    data(){
+        return{
+            AddressInfo:{
+                id:"1",
+                name:"terry",
+                tel:"123",
+                province:"12",
+                city:"123",
+                county:"11",
+                addressDetail:"11",
+                areaCode:"1111",
+                postalCode:"123",
+                idDefault:true
+            }
+        }
+    },
+    methods:{
+        onClickLeft(){
+            this.$router.push("/Address")
+        }
+    }
+}
+</script>
